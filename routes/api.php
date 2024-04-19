@@ -3,7 +3,7 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\MusicController;
 use App\Http\Controllers\Api\UsersController;
-use App\Http\Controllers\ProvidersController;
+use App\Http\Controllers\Api\ProvidersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +38,10 @@ Route::delete('music/{music}', [MusicController::class, 'destroy']);
 
 //Providers
 Route::get('providers', [ProvidersController::class, 'index']);
+Route::post('providers', [ProvidersController::class, 'store']);
+Route::get('providers/{provider}', [ProvidersController::class, 'show']);
+Route::put('providers/{provider}', [ProvidersController::class, 'update']);
+Route::delete('providers/{provider}', [ProvidersController::class, 'destroy']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
