@@ -78,7 +78,5 @@ class MusicSeeder extends Seeder
         foreach ($music as $m) {
             \App\Models\Music::create($m);
         }
-
-        //attach provider to music
     }
 }
