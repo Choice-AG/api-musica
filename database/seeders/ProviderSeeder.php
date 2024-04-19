@@ -14,19 +14,19 @@ class ProviderSeeder extends Seeder
                 'name' => 'Spotify',
                 'platform' => 'Web',
                 'url' => 'https://www.spotify.com',
-                'logo' => 'https://www.spotify.com/logo.png',
+                'logo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png',
             ],
             [
                 'name' => 'Apple Music',
                 'platform' => 'iOS',
                 'url' => 'https://www.apple.com/music',
-                'logo' => 'https://www.apple.com/logo.png',
+                'logo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/833px-Apple_logo_black.svg.png',
             ],
             [
                 'name' => 'YouTube Music',
                 'platform' => 'Web',
                 'url' => 'https://music.youtube.com',
-                'logo' => 'https://music.youtube.com/logo.png',
+                'logo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Youtube_Music_icon.svg/2048px-Youtube_Music_icon.svg.png',
             ],
         ];
 
