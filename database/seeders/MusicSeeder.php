@@ -73,6 +73,36 @@ class MusicSeeder extends Seeder
                 'genre' => 'Rock',
                 'year' => 1979,
             ],
+            [
+                'title' => 'Fancy',
+                'artist' => 'Twice',
+                'genre' => 'K-Pop',
+                'year' => 2020,
+            ],
+            [
+                'title' => 'Dynamite',
+                'artist' => 'BTS',
+                'genre' => 'K-Pop',
+                'year' => 2020,
+            ],
+            [
+                'title' => 'How You Like That',
+                'artist' => 'Blackpink',
+                'genre' => 'K-Pop',
+                'year' => 2020,
+            ],
+            [
+                'title' => 'Ice Cream',
+                'artist' => 'Blackpink',
+                'genre' => 'K-Pop',
+                'year' => 2020,
+            ],
+            [
+                'title' => 'In the frozen',
+                'artist' => 'Dreamcatcher',
+                'genre' => 'K-Pop',
+                'year' => 2020,
+            ],
         ];
 
         foreach ($music as $m) {
