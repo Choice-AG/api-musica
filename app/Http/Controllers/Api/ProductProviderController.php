@@ -27,16 +27,17 @@ class ProductProviderController extends Controller
 
     public function show($music_id)
     {
-        $productProvider = ProductProvider::where('music_id', $music_id)->first();
+        $productProviders = ProductProvider::where('music_id', $music_id)->get();
 
-        if ($productProvider) {
-            return response()->json($productProvider);
+        if ($productProviders->isNotEmpty()) {
+            return response()->json($productProviders);
         } else {
             return response()->json([
-                'message' => 'Product provider not found for this music'
+                'message' => 'Product providers not found for this music'
             ], 404);
         }
     }
+
 
     public function update(Request $request, $music_id)
     {
