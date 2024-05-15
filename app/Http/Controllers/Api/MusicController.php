@@ -18,8 +18,10 @@ class MusicController extends Controller
         $request->validate([
             'title' => 'required',
             'artist' => 'required',
+            'album' => 'required',
             'genre' => 'required',
             'year' => 'required',
+            'image' => 'nullable',
         ]);
 
         $music = Music::create($request->all());
@@ -35,8 +37,10 @@ class MusicController extends Controller
         $request->validate([
             'title' => 'nullable',
             'artist' => 'nullable',
+            'album' => 'nullable',
             'genre' => 'nullable',
             'year' => 'nullable',
+            'image' => 'nullable',
         ]);
 
         $music->update($request->all());
