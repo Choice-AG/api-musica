@@ -47,9 +47,9 @@ Route::delete('providers/{provider}', [ProvidersController::class, 'destroy']);
 //ProductProvider
 Route::get('productprovider', [ProductProviderController::class, 'index']);
 Route::post('productprovider', [ProductProviderController::class, 'store']);
-Route::get('productprovider/{productprovider}', [ProductProviderController::class, 'show']);
-Route::put('productprovider/{productprovider}', [ProductProviderController::class, 'update']);
-Route::delete('productprovider/{productprovider}', [ProductProviderController::class, 'destroy']);
+Route::get('productprovider/{music_id}', [ProductProviderController::class, 'show']);
+Route::put('productprovider/{music_id}', [ProductProviderController::class, 'update']);
+Route::delete('productprovider/{music_id}', [ProductProviderController::class, 'destroy']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

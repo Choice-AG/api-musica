@@ -15,19 +15,6 @@ class ProductProviderController extends Controller
         return response()->json($productProvider);
     }
 
-    public function show($id)
-    {
-        $productProvider = ProductProvider::find($id);
-
-        if ($productProvider) {
-            return response()->json($productProvider);
-        } else {
-            return response()->json([
-                'message' => 'Product provider not found'
-            ], 404);
-        }
-    }
-
     public function store(Request $request)
     {
         $productProvider = new ProductProvider();
@@ -38,9 +25,22 @@ class ProductProviderController extends Controller
         return response()->json($productProvider, 201);
     }
 
-    public function update(Request $request, $id)
+    public function show($music_id)
     {
-        $productProvider = ProductProvider::find($id);
+        $productProvider = ProductProvider::where('music_id', $music_id)->first();
+
+        if ($productProvider) {
+            return response()->json($productProvider);
+        } else {
+            return response()->json([
+                'message' => 'Product provider not found for this music'
+            ], 404);
+        }
+    }
+
+    public function update(Request $request, $music_id)
+    {
+        $productProvider = ProductProvider::where('music_id', $music_id)->first();
 
         if ($productProvider) {
             $productProvider->provider_id = $request->provider_id;
@@ -50,26 +50,26 @@ class ProductProviderController extends Controller
             return response()->json($productProvider);
         } else {
             return response()->json([
-                'message' => 'Product provider not found'
+                'message' => 'Product provider not found for this music'
             ], 404);
         }
     }
 
-    public function destroy($id)
+    public function destroy($music_id)
     {
-        $productProvider = ProductProvider::find($id);
+        $productProvider = ProductProvider::where('music_id', $music_id)->first();
 
         if ($productProvider) {
             $productProvider->delete();
 
             return response()->json([
-                'message' => 'Product provider deleted successfully'
+                'message' => 'Product provider deleted successfully for this music'
             ], 204);
         } else {
             return response()->json([
-                'message' => 'Product provider not found'
+                'message' => 'Product provider not found for this music'
             ], 404);
         }
     }
-
 }
+
