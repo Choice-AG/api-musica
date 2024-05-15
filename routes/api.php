@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\MusicController;
 use App\Http\Controllers\Api\UsersController;
 use App\Http\Controllers\Api\ProvidersController;
+use App\Http\Controllers\Api\ProductProviderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,13 @@ Route::post('providers', [ProvidersController::class, 'store']);
 Route::get('providers/{provider}', [ProvidersController::class, 'show']);
 Route::put('providers/{provider}', [ProvidersController::class, 'update']);
 Route::delete('providers/{provider}', [ProvidersController::class, 'destroy']);
+
+//ProductProvider
+Route::get('productprovider', [ProductProviderController::class, 'index']);
+Route::post('productprovider', [ProductProviderController::class, 'store']);
+Route::get('productprovider/{productprovider}', [ProductProviderController::class, 'show']);
+Route::put('productprovider/{productprovider}', [ProductProviderController::class, 'update']);
+Route::delete('productprovider/{productprovider}', [ProductProviderController::class, 'destroy']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
