@@ -8,13 +8,15 @@ use Illuminate\Http\Request;
 
 class MusicController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $music = Music::orderBy('id', 'asc')->get();
 
         return response()->json($music);
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $request->validate([
             'title' => 'required',
             'artist' => 'required',
@@ -29,11 +31,14 @@ class MusicController extends Controller
         return response()->json($music);
     }
 
-    public function show(Music $music) {
+
+    public function show(Music $music)
+    {
         return response()->json($music);
     }
 
-    public function update(Request $request, Music $music) {
+    public function update(Request $request, Music $music)
+    {
         $request->validate([
             'title' => 'nullable',
             'artist' => 'nullable',
@@ -48,7 +53,8 @@ class MusicController extends Controller
         return response()->json($music);
     }
 
-    public function destroy(Music $music) {
+    public function destroy(Music $music)
+    {
         $music->delete();
 
         return response()->json([
