@@ -19,6 +19,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Endpoints
+Route::get('/', function () {
+    return response()->json([
+        //documentation
+        'message' => 'Welcome to the Music API.',
+        'links' => [
+            'users' => 'https://naughty-dhawan.93-93-114-91.plesk.page/api/users',
+            'users{user_id}' => 'https://naughty-dhawan.93-93-114-91.plesk.page/api/users/{user_id}',
+            'music' => 'https://naughty-dhawan.93-93-114-91.plesk.page/api/music',
+            'music{music_id}' => 'https://naughty-dhawan.93-93-114-91.plesk.page/api/music/{music_id}',
+            'providers' => 'https://naughty-dhawan.93-93-114-91.plesk.page/api/providers',
+            'providers{music_id}' => 'https://naughty-dhawan.93-93-114-91.plesk.page/api/productprovider/{music_id}',
+            'productprovider' => 'https://naughty-dhawan.93-93-114-91.plesk.page/api/productprovider',
+            'productprovider{music_id}' => 'https://naughty-dhawan.93-93-114-91.plesk.page/api/productprovider/{music_id}',
+            'register' => 'https://naughty-dhawan.93-93-114-91.plesk.page/api/register',
+            'login' => 'https://naughty-dhawan.93-93-114-91.plesk.page/api/login',
+        ]
+    ]);
+});
+
 //Users
 Route::get('users', [UsersController::class, 'index']);
 Route::post('users', [UsersController::class, 'store']);
